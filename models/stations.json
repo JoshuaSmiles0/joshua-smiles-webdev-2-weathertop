@@ -1,0 +1,13 @@
+{
+  "file": "./models/stations.json",
+  "stations": [
+    {
+      "title": "Antrim",
+      "_id": "d44837fa-3df7-40dd-bd3e-9f14db55b29d"
+    },
+    {
+      "title": "Laois",
+      "_id": "5960c2ca-939f-41ce-8134-c7329821452f"
+    }
+  ]
+}
