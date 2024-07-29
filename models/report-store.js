@@ -9,7 +9,7 @@ export const reportStore = {
     return db.data.reports;
   },
 
-  async addTrack(stationId, report) {
+  async addReport(stationId, report) {
     await db.read();
     report._id = v4();
     report.stationid = stationId;
@@ -42,10 +42,10 @@ export const reportStore = {
 
   async updateReport(report, updatedReport) {
     report.code = updatedReport.code;
-    report.temp = updatedReport.temp;
-    report.windSpeed = updatedReport.windSpeed;
-    report.windDirection = updatedReport.windDirection;
-    report.pressure = updatedReport.pressure;
+        report.temp = updatedReport.temp;
+        report.windDirection = updatedReport.windDirection;
+        report.windSpeed = updatedReport.windSpeed;
+        report.pressure = updatedReport.pressure;
 
     await db.write();
   },

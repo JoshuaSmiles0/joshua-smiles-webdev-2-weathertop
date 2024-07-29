@@ -17,5 +17,12 @@ export const dashboardController = {
     console.log(`adding playlist ${newStation.title}`);
     await stationStore.addStation(newStation);
     response.redirect("/dashboard")
-  }
+  },
+  
+  async deleteStation(request,response){
+    const stationId = request.params.id;
+    console.log(`deleting station ${stationId}`);
+    await stationStore.deleteStationById(stationId);
+    response.redirect("/dashboard");
+  },
 };
