@@ -28,4 +28,14 @@ async addReport(request, response) {
     await reportStore.addReport(station._id, newReport);
     response.redirect("/station/" + station._id);
   },
+
+
+async deleteReport (request,response){
+  const stationId = (request.params.stationid);
+  const reportId = (request.params.reportid);
+  console.log(`deleting report ${reportId} from ${stationId}`);
+  await reportStore.deleteReport(reportId);
+  response.redirect("/station/" + stationId);
+},
+  
 };
