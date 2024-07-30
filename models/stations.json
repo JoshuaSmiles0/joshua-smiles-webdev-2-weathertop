@@ -2,8 +2,8 @@
   "file": "./models/stations.json",
   "stations": [
     {
-      "title": "Laois",
-      "_id": "5960c2ca-939f-41ce-8134-c7329821452f"
+      "title": "Dundalk",
+      "_id": "c372d915-539a-4b7f-8713-7155ad6f4e38"
     }
   ]
 }

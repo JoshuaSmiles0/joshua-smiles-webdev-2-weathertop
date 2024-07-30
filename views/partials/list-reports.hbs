@@ -26,7 +26,12 @@
       <td>
         {{pressure}}
       </td>
-    </tr>
+      <td>
+        <a href = "/station/{{../station._id}}/deleteReport/{{_id}}" class="button">
+          {{>icons/delete}}
+        </a>
+      </td>
+    </tr>.
     {{/each}}
   </tbody>
 </table>
