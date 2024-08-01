@@ -1,5 +1,5 @@
-<form class = "box" action = "/station/{{station._id}}/addreport" method = "POST">
-  <label>Enter Report Details</label>
+<form class = "box" action = "/station/{{station._id}}/editReport/{{report._id}}" method = "POST">
+  <label>Enter Updated Details</label>
   <div class = "field is-horizontal">
     <div class = "field-body">
       <div class = "field">
@@ -20,6 +20,6 @@
     </div>
   </div>
   <button class="button is-warning is-dark">
-    Submit Report
+    Update Report
   </button>
 </form>
