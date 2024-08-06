@@ -1,0 +1,19 @@
+{
+  "file": "./models/users.json",
+  "users": [
+    {
+      "firstName": "brain",
+      "surname": "jones",
+      "email": "brainjonson@gmail.com",
+      "password": "aaaaaaaa",
+      "_id": "d70333b2-e273-4bce-b0a5-530bbdf3bdea"
+    },
+    {
+      "firstName": "babayaga",
+      "surname": "davies",
+      "email": "babayaga.davies@hotmail.com",
+      "password": "bbbbbbbbbbb",
+      "_id": "722d3864-fa94-4da9-b9b4-96bf521ec3f6"
+    }
+  ]
+}
