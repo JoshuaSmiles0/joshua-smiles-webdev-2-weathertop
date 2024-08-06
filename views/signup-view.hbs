@@ -1,0 +1,33 @@
+{{> welcome-menu active="signup"}}
+
+<section class = "section">
+<h1 class = "title">
+  Sign up
+  </h1>
+  <form action = "/register" method = "POST">
+    <label class = "label">Name</label>
+    <div class = "field is-horizontal">
+      <div class = "field-body">
+      <div class = "field">
+     <input class = "input" type = "text" placeholder = "Please Enter First Name" name ="firstName">
+      </div>
+      <div class = "field">
+        <input class = "input" type = "text" placeholder = "Please Enter Surname" name = "surname">
+      </div>
+    </div>
+    </div>
+    <div class = "field">
+      <label class ="label">Email</label>
+      <input class = "input" type = "text" placeholder = "Please Enter Email" name = "email">
+    </div>
+    <div class = "field">
+      <label class = "label">Password</label>
+      <input class = "input" type = "password" placeholder = "Please Choose Password" name = "password">
+    </div>
+    <div class = "field is-grouped">
+      <button class = "button is-warning">
+        Submit
+      </button>
+    </div>
+  </form>
+</section>
