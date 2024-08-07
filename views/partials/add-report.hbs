@@ -2,18 +2,26 @@
   <label>Enter Report Details</label>
   <div class = "field is-horizontal">
     <div class = "field-body">
-      <div class = "field">
-        <input class = "input" type = "text" placeholder = "Enter Code" name = "code">
+     
+      <div class = "select">
+{{> weatherTypes/weather-codes}}
       </div>
+        
             <div class = "field">
         <input class = "input" type = "text" placeholder = "Enter Temperature" name = "temp">
       </div>
             <div class = "field">
         <input class = "input" type = "text" placeholder = "Enter Windspeed" name = "windSpeed">
       </div>
-            <div class = "field">
-        <input class = "input" type = "text" placeholder = "Enter Wind Direction" name = "windDirection">
+      
+      <div class = "control">
+        
+
+        <div class ="select">
+        {{>weatherTypes/wind-directions}}
       </div>
+              </div>
+  
             <div class = "field">
         <input class = "input" type = "text" placeholder = "Enter Pressure" name = "pressure">
       </div>
