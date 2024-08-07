@@ -5,7 +5,7 @@ export const dashboardController = {
   async index(request, response) {
     const loggedInUser = await accountsController.getLoggedInUser(request);
     const viewData = {
-      title: "Station 1 Dashboard",
+      title: "Station Dashboard",
       stations: await stationStore.getStationByUserId(loggedInUser._id),
     };
     console.log("dashboard rendering");
@@ -16,6 +16,8 @@ export const dashboardController = {
     const loggedInUser = await accountsController.getLoggedInUser(request);
     const newStation = {
       title: request.body.title,
+      lat: request.body.lat,
+      long:request.body.long,
       userId:loggedInUser._id,
     };
     console.log(`adding playlist ${newStation.title}`);

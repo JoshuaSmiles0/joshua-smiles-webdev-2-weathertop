@@ -2,8 +2,11 @@
 
 <section class = "section">
 <div class = "title">
-  {{station.title}}
+  {{station.title}} 
   </div>
+  <p class = "subtitle">
+    (Lat:{{station.lat}}, Long:{{station.long}})
+  </p>
   {{>list-reports}}
   {{>add-report}}
 </section>

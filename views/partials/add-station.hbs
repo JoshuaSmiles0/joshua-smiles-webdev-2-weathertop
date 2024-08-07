@@ -1,8 +1,19 @@
 
 <form action="/dashboard/addstation" method="POST">
+  <div class = "field is-horizontal">
   <div class="field">
     <label class="label">Station Name</label>
     <input class="input" type="text" placeholder="Enter Station Name" name="title">
   </div>
+      <div class="field">
+    <label class="label">Latitude</label>
+    <input class="input" type="text" placeholder="Enter Latitude" name="lat">
+  </div>
+      <div class="field">
+    <label class="label">Longitude</label>
+    <input class="input" type="text" placeholder="Enter Longitude" name="long">
+  </div>
+    
+     </div>
   <button class="button is-warning is-dark">Add Station</button>
 </form>

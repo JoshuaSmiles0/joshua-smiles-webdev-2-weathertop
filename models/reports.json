@@ -36,6 +36,15 @@
       "pressure": 53,
       "_id": "2abd8ee4-1da9-40b7-8839-5350a8f3272f",
       "stationid": "9b810d37-b7d8-44c3-a796-835d82a54ebb"
+    },
+    {
+      "code": "13",
+      "temp": "1",
+      "windSpeed": 115,
+      "windDirection": 45,
+      "pressure": 4,
+      "_id": "a1cf6ae7-54d0-434c-bc5d-91cd9e0f6c06",
+      "stationid": "c1435d3a-112e-4cb3-84ea-a0fff8c0da38"
     }
   ]
 }
