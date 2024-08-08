@@ -1,12 +1,110 @@
 {{> menu}}
 
-<section class = "section">
-<div class = "title">
-  {{station.title}} 
+<div class= "box">
+  <div class ="columns">
+    <div class = "column">
+  <div class = "card">
+    <header class = "card-header">
+    <p class = "card-header-title">
+      {{station.title}}
+      </p>
+      {{>icons/location}}
+    </header>
+    <div class = "card-content">
+      <p>
+        Lat:{{station.lat}}
+      </p>
+      <p>
+        Long:{{station.long}}
+      </p>
+    </div>
   </div>
-  <p class = "subtitle">
-    (Lat:{{station.lat}}, Long:{{station.long}})
-  </p>
+       </div>
+    <div class = "column">
+  <div class = "card">
+    <header class = "card-header">
+    <p class = "card-header-title">
+      Weather
+      </p>
+<img src = "{{weatherIcon}}" width ="48" height ="48" alt = "weather">
+    </header>
+    <div class = "card-content">
+      <p>
+        {{weather}}
+      </p>
+    </div>
+  </div>
+       </div>
+        <div class = "column">
+  <div class = "card">
+    <header class = "card-header">
+    <p class = "card-header-title">
+      Temperature
+      </p>
+<img src = "{{tempIconPath}}" width = "48" height = "48" alt = "temp">
+    </header>
+    <div class = "card-content">
+      <p>
+        Current:{{currentTemp}}
+      </p>
+      <p>
+        Max:{{maxTemp}}
+      </p>
+      <p>
+        Min:{{minTemp}}
+      </p>
+    </div>
+  </div>
+       </div>
+        <div class = "column">
+  <div class = "card">
+    <header class = "card-header">
+    <p class = "card-header-title">
+      Wind
+      </p>
+      {{>icons/wind}}
+    </header>
+    <div class = "card-content">
+      <p>
+        Direction:{{windDirectionCompass}}
+      </p>
+      <p>
+        Current:{{currentWind}}
+      </p>
+      <p>
+        Max:{{maxWind}}
+      </p>
+      <p>
+        Min:{{minWind}}
+      </p>
+    </div>
+  </div>
+       </div>
+        <div class = "column">
+  <div class = "card">
+    <header class = "card-header">
+    <p class = "card-header-title">
+      Pressure
+      </p>
+      {{>icons/pressure}}
+    </header>
+    <div class = "card-content">
+      <p>
+        Current: {{currentPressure}}
+      </p>
+      <p>
+        Max:{{maxPressure}}
+      </p>
+            <p>
+        Min:{{minPressure}}
+      </p>
+    </div>
+  </div>
+       </div>
+</div>
+</div>
+
+<section class = "section">
   {{>list-reports}}
   {{>add-report}}
 </section>
