@@ -14,6 +14,7 @@ app.engine(".hbs", engine({ extname: ".hbs" }));
 app.set("view engine", ".hbs");
 app.set("views", "./views");
 app.use("/", router);
+app.use(express.static('public'));
 
 const listener = app.listen(process.env.PORT || 4000, function () {
   console.log(`Todolist started on http://localhost:${listener.address().port}`);

@@ -83,11 +83,11 @@
       "stationid": "b4426d75-24a5-4950-b112-695e76549396"
     },
     {
-      "code": "313",
-      "temp": 9,
-      "windSpeed": 102,
-      "windDirection": 337.5,
-      "pressure": 4,
+      "code": "302",
+      "temp": "300",
+      "windSpeed": "8",
+      "windDirection": "22.5",
+      "pressure": "4",
       "_id": "dbb465d5-59c4-48b5-b919-640b75bd277e",
       "stationid": "4dedc8a0-51b5-4c45-840d-bca796a4daf8"
     }
