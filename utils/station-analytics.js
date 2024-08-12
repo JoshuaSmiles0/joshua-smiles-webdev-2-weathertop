@@ -5,8 +5,7 @@ export const stationAnalytics = {
   getWeatherIcon(station){  
     if(station.reports.length > 0){
   let latestReportPosition= (station.reports.length) -1 ;
-  let currentWeatherCode = station.reports[latestReportPosition].code;
-    
+  let currentWeatherCode = station.reports[latestReportPosition].code;    
   let weatherGroup = null;
   
   if((currentWeatherCode >= 200 ) && (currentWeatherCode <= 232)){
@@ -37,7 +36,7 @@ export const stationAnalytics = {
     weatherGroup = 80
   }
     
-  let weatherIconAddress = null;
+    let weatherIconAddress = null;
     
   switch (weatherGroup){
       
@@ -63,8 +62,8 @@ export const stationAnalytics = {
   }
     console.log(`${weatherIconAddress}`)
     return weatherIconAddress;
-  
   }
+  
 },
   
     getLatestWeather(station){
@@ -140,6 +139,14 @@ export const stationAnalytics = {
     }
   },
   
+    currentTempFarenheit(station){
+    if(station.reports.length > 0){
+    let currentTemp = stationAnalytics.currentTemp(station) ;
+    let currentTempFarenheit = Math.round((currentTemp * 1.8) + 32);
+    return currentTempFarenheit;
+    }
+  },
+  
   maxTemp (station){
     let maxTemp = null;
     if(station.reports.length > 0){
@@ -191,7 +198,7 @@ export const stationAnalytics = {
     let iconPath = null;
    
     switch(icon){
-      default: iconPath= "https://cdn.glitch.global/d6973480-5b8e-463f-a315-d8ad6ba2634d/Cold.png?v=1723154498650";
+      default: iconPath = "https://cdn.glitch.global/d6973480-5b8e-463f-a315-d8ad6ba2634d/Cold.png?v=1723154498650";
         break;
       case 1: iconPath = "https://cdn.glitch.global/d6973480-5b8e-463f-a315-d8ad6ba2634d/Cold.png?v=1723154498650";
         break;
@@ -253,12 +260,125 @@ export const stationAnalytics = {
       
     }
 },
+  
+  windDirectionIcon(station){
+    
+    let windDirection = stationAnalytics.windDirection(station);
+    let windDirectionPath = null;
+    
+    switch (windDirection){
+        default : windDirectionPath = "https://cdn.glitch.global/d6973480-5b8e-463f-a315-d8ad6ba2634d/north.png?v=1723430007196"
+        break;
+      case "N": windDirectionPath = "https://cdn.glitch.global/d6973480-5b8e-463f-a315-d8ad6ba2634d/north.png?v=1723430007196"
+        break;
+        case "NNE": windDirectionPath = "https://cdn.glitch.global/d6973480-5b8e-463f-a315-d8ad6ba2634d/northEast.png?v=1723430013665"
+        break;
+        case "NE": windDirectionPath = "https://cdn.glitch.global/d6973480-5b8e-463f-a315-d8ad6ba2634d/northEast.png?v=1723430013665"
+        break;
+        case "ENE": windDirectionPath = "https://cdn.glitch.global/d6973480-5b8e-463f-a315-d8ad6ba2634d/northEast.png?v=1723430013665"
+        break;
+        case "E": windDirectionPath = "https://cdn.glitch.global/d6973480-5b8e-463f-a315-d8ad6ba2634d/east.png?v=1723430018894"
+        break;
+        case "ESE": windDirectionPath = "https://cdn.glitch.global/d6973480-5b8e-463f-a315-d8ad6ba2634d/southEast.png?v=1723430022737"
+        break;
+        case "SE": windDirectionPath = "https://cdn.glitch.global/d6973480-5b8e-463f-a315-d8ad6ba2634d/southEast.png?v=1723430022737"
+        break;
+        case "SSE": windDirectionPath = "https://cdn.glitch.global/d6973480-5b8e-463f-a315-d8ad6ba2634d/southEast.png?v=1723430022737"
+        break;
+        case "S": windDirectionPath = "https://cdn.glitch.global/d6973480-5b8e-463f-a315-d8ad6ba2634d/south.png?v=1723430027719"
+        break;
+        case "SSW": windDirectionPath = "https://cdn.glitch.global/d6973480-5b8e-463f-a315-d8ad6ba2634d/southWest.png?v=1723430035612"
+        break;
+        case "SW": windDirectionPath = "https://cdn.glitch.global/d6973480-5b8e-463f-a315-d8ad6ba2634d/southWest.png?v=1723430035612"
+        break;
+        case "WSW": windDirectionPath = "https://cdn.glitch.global/d6973480-5b8e-463f-a315-d8ad6ba2634d/southWest.png?v=1723430035612"
+        break;
+        case "W": windDirectionPath = "https://cdn.glitch.global/d6973480-5b8e-463f-a315-d8ad6ba2634d/west.png?v=1723430040489"
+        break;
+        case "WNW": windDirectionPath = "https://cdn.glitch.global/d6973480-5b8e-463f-a315-d8ad6ba2634d/northWest.png?v=1723430045913"
+        break;
+        case "NW": windDirectionPath = "https://cdn.glitch.global/d6973480-5b8e-463f-a315-d8ad6ba2634d/northWest.png?v=1723430045913"
+        break;
+        case "NNW": windDirectionPath = "https://cdn.glitch.global/d6973480-5b8e-463f-a315-d8ad6ba2634d/northWest.png?v=1723430045913"
+        break; 
+    }
+    return windDirectionPath;
+  },
 
 currentWind(station){
     if(station.reports.length > 0){
     let latestPosition = (station.reports.length) -1 ;
     let currentWind = station.reports[latestPosition].windSpeed ;
     return currentWind;
+    }
+  },
+  
+  currentWindMph(station){
+    if(station.reports.length > 0){
+    let currentWind = stationAnalytics.currentWind(station) ;
+    const currentWindMph = Math.round(currentWind * 0.621371);
+    return currentWindMph;
+    }
+  },
+  
+  currentWindKnots(station){
+    if(station.reports.length > 0){
+      let currentWindMph = stationAnalytics.currentWindMph(station);
+      const currentWindKnots = currentWindMph / 1.15;
+
+    return currentWindKnots;
+          }
+  },
+  
+  
+  windType(station){
+    if(station.reports.length >0){
+      const currentWindKnots = stationAnalytics.currentWindKnots(station);
+      let windDescription = null;
+      
+      if(currentWindKnots <1){
+        windDescription = "Calm"
+      }
+      else if ((currentWindKnots >1) && (currentWindKnots <4)){
+               windDescription = "Light air"
+               }
+            else if ((currentWindKnots >=4) && (currentWindKnots <7)){
+               windDescription = "Light breeze"
+               }
+            else if ((currentWindKnots >=7) && (currentWindKnots <10)){
+               windDescription = "Gentle Breeze"
+               }
+            else if ((currentWindKnots >=10) && (currentWindKnots <16)){
+               windDescription = "Moderate Breeze"
+               }
+            else if ((currentWindKnots >=16) && (currentWindKnots <21)){
+               windDescription = "Fresh Breeze"
+               }
+            else if ((currentWindKnots >=21) && (currentWindKnots <27)){
+               windDescription = "Strong Breeze"
+               }
+            else if ((currentWindKnots >=27) && (currentWindKnots <33)){
+               windDescription = "Near Gale"
+               }
+            else if ((currentWindKnots >=33) && (currentWindKnots <40)){
+               windDescription = "Gale"
+               }
+            else if ((currentWindKnots >=40) && (currentWindKnots <47)){
+               windDescription = "Strong Gale"
+               }
+            else if ((currentWindKnots >=47) && (currentWindKnots <55)){
+               windDescription = "Storm"
+               }
+            else if ((currentWindKnots >=55) && (currentWindKnots <63)){
+               windDescription = "Violent Storm"
+               }
+      else if (currentWindKnots >=63){
+               windDescription = "Hurricane"
+               }
+      
+      return windDescription;
+      
+      
     }
   },
   
@@ -322,12 +442,21 @@ currentWind(station){
       for (let i = 1; i<station.reports.length; i++){
         if(station.reports[i].pressure < minPressure )
           {
-            minPressure = station.reports[i].windPressure;
+            minPressure = station.reports[i].pressure;
           }
       }
     }
-    console.log(minPressure);
+    console.log(`min pressure ${minPressure}`);
     return minPressure;
+  },
+  
+    calculateWindChill(station){
+    if(station.reports.length >0){
+    const currentTemp = stationAnalytics.currentTemp(station);
+    const windSpeed = stationAnalytics.currentWindMph(station);
+    const windChill = Math.round(13.12 + (0.6215 * currentTemp) - (11.37 * (windSpeed**0.16)) + (0.3965 * currentTemp * (windSpeed**0.16)));
+    return windChill;
+    }
   },
   
   

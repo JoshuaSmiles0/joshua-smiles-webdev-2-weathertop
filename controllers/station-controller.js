@@ -11,32 +11,42 @@ export const stationController =
     const weatherIcon = stationAnalytics.getWeatherIcon(station);
     const weather = stationAnalytics.getLatestWeather(station);
     const currentTemp = stationAnalytics.currentTemp(station);
+    const currentTempFarenheit = stationAnalytics.currentTempFarenheit(station)
     const maxTemp = stationAnalytics.maxTemp(station);
     const minTemp = stationAnalytics.minTemp(station);
     const tempIconPath = stationAnalytics.tempIcon(station);
     const currentWind = stationAnalytics.currentWind(station);
+    const currentWindMph = stationAnalytics.currentWindMph(station);
     const maxWind = stationAnalytics.maxWind(station);
     const minWind = stationAnalytics.minWind(station);
     const windDirectionCompass = stationAnalytics.windDirection(station);
+    const windDirectionIcon = stationAnalytics.windDirectionIcon(station);
+    const windType = stationAnalytics.windType(station);
     const currentPressure = stationAnalytics.currentPressure(station);
     const maxPressure = stationAnalytics.maxPressure(station);
     const minPressure = stationAnalytics.minPressure(station);
+    const windChill = stationAnalytics.calculateWindChill(station);
     const viewData = {
       title:"station",
       station: station,
       weatherIcon:weatherIcon,
       weather:weather,
       currentTemp:currentTemp,
+      currentTempFarenheit:currentTempFarenheit,
       maxTemp:maxTemp,
       minTemp:minTemp,
       tempIconPath:tempIconPath,
       currentWind:currentWind,
+      currentWindMph:currentWindMph,
       maxWind:maxWind,
       minWind:minWind,
       windDirectionCompass:windDirectionCompass,
+      windDirectionIcon:windDirectionIcon,
+      windType:windType,
       currentPressure:currentPressure,
       maxPressure:maxPressure,
       minPressure:minPressure,
+      windChill:windChill,
     };
     
     response.render("station-view",viewData);
