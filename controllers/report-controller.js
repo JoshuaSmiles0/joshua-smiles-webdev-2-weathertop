@@ -13,6 +13,7 @@ const viewData = {
   title : "Edit Report",
   station : await stationStore.getStationById(stationId),
   report: await reportStore.getReportById(reportId),
+  
 };
     response.render("report-view",viewData)
     
