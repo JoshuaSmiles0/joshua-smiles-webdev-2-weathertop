@@ -2,7 +2,10 @@ import {stationStore} from "../models/station-store.js"
 import {reportStore} from "../models/report-store.js"
 
 
+
 export const reportController = {
+  
+  
   
   async index(request,response)
   {

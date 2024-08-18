@@ -55,7 +55,9 @@ export const stationController =
   
 async addReport(request, response) {
     const station = await stationStore.getStationById(request.params.id);
+    const date = new Date;
     const newReport = {
+      date: date.toISOString().replace('T',' ').replace('Z',' '),
       code: request.body.code,
       temp: Number(request.body.temp),
       windSpeed: Number(request.body.windSpeed),
