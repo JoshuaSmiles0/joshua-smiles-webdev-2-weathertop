@@ -2,10 +2,9 @@
   "file": "./models/users.json",
   "users": [
     {
-      "firstName": "brain",
-      "surname": "jones",
+      "firstName": "altus",
+      "surname": "davies",
       "email": "brainjonson@gmail.com",
-      "password": "aaaaaaaa",
       "_id": "d70333b2-e273-4bce-b0a5-530bbdf3bdea"
     },
     {
@@ -21,6 +20,26 @@
       "email": "john@gmail.com",
       "password": "123456",
       "_id": "46b8877e-41d4-4e44-bd5d-5e5a6e5e3ff1"
+    },
+    {
+      "firstName": "babayaga",
+      "surname": "Smiles",
+      "email": "polpot@gmail.com",
+      "_id": "d708427c-9d17-4299-a34d-51a3dd8831fe"
+    },
+    {
+      "firstName": "peter",
+      "surname": "dinklage",
+      "email": "peter.dinklage@gmail.com",
+      "password": "1234",
+      "_id": "3f668ffc-799a-42b3-97ba-8859ea4f6f61"
+    },
+    {
+      "firstName": "",
+      "surname": "",
+      "email": "polpot@gmail.com",
+      "password": "vvvv",
+      "_id": "2a09b1d1-9345-4e86-84d6-1c9e3192d298"
     }
   ]
 }

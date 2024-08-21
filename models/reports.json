@@ -66,11 +66,11 @@
     },
     {
       "date": "2024-08-18 22:21:54.796 ",
-      "code": "321",
-      "temp": 9,
-      "windSpeed": 15,
-      "windDirection": 337.5,
-      "pressure": 101,
+      "code": "201",
+      "temp": "300",
+      "windSpeed": "115",
+      "windDirection": "22.5",
+      "pressure": "53",
       "_id": "1260e275-746e-41f2-bd45-052ceaf89d47",
       "stationid": "6f297217-dd72-4f69-b78f-088886ae2071"
     },

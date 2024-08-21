@@ -21,6 +21,27 @@
       "long": "21",
       "userId": "46b8877e-41d4-4e44-bd5d-5e5a6e5e3ff1",
       "_id": "44bcc9e6-563f-42ea-878a-f7a3c686e250"
+    },
+    {
+      "title": "kevitsa",
+      "lat": "",
+      "long": "",
+      "userId": "d70333b2-e273-4bce-b0a5-530bbdf3bdea",
+      "_id": "c07f670b-ffa0-49d2-938f-8fec88ddd953"
+    },
+    {
+      "title": "gnome",
+      "lat": "",
+      "long": "",
+      "userId": "d70333b2-e273-4bce-b0a5-530bbdf3bdea",
+      "_id": "d00ab55e-a833-4d2e-bc5c-e1f700c5d017"
+    },
+    {
+      "title": "staffa",
+      "lat": "9.03",
+      "long": "4.05",
+      "userId": "d708427c-9d17-4299-a34d-51a3dd8831fe",
+      "_id": "fc76679e-19c1-402a-8ed7-4baa7d8f8fbe"
     }
   ]
 }

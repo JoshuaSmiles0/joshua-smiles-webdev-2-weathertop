@@ -34,6 +34,31 @@ export const accountsController = {
     response.render("signup-view",viewData);
   },
   
+  updateUser(request,response){
+    const viewData = {
+      title: "Update User Details",
+    };
+    console.log("opening update user page");
+    response.render("settings-view",viewData);
+    
+  },
+  
+  async registerUpdate(request,response){
+    
+    const updatedUser = {
+      firstName: request.body.firstName,
+      surname: request.body.surname,
+      email: request.body.email,
+      password:request.body.password,
+      
+    };
+    
+    const userToUpdate = await userStore.getUserByEmail(request.body.currentEmail);
+    console.log(`Updating user ${userToUpdate.firstName}`)
+    await userStore.updateUser(userToUpdate,updatedUser);
+    response.redirect("/login");
+  },
+  
   async register(request,response) {
     const user = request.body;
     await userStore.addUser(user);
@@ -43,13 +68,13 @@ export const accountsController = {
   
   async authenticate(request,response) {
     const user = await userStore.getUserByEmail(request.body.email)
-    if (user) {
+    if ((user) && (user.password == request.body.password))  {
       response.cookie("station",user.email);
       console.log(`logging in user ${user.email}`);
       response.redirect("/dashboard");
     }
     else {
-      console.log("user does not exist");
+      console.log("user email or password incorrect");
       response.redirect("/login");
     }
   },
