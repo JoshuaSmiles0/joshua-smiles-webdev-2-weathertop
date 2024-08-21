@@ -1,0 +1,27 @@
+{{> menu active="settings"}}
+
+<form class = "box" action = "/updateUser" method = "POST">
+  <label>Enter Updated Details</label>
+  <div class = "field is-horizontal">
+    <div class = "field-body">
+      <div class = "field">
+        <input class = "input" type = "text" placeholder = "Enter Current Email" name = "currentEmail">
+      </div>
+            <div class = "field">
+        <input class = "input" type = "text" placeholder = "Enter New First Name" name = "firstName">
+      </div>
+            <div class = "field">
+        <input class = "input" type = "text" placeholder = "Enter New Surname" name = "surname">
+      </div>
+            <div class = "field">
+        <input class = "input" type = "text" placeholder = "Enter New Email" name = "email">
+      </div>
+      <div class = "field">
+        <input class = "input" type = "text" placeholder = "Enter New Password" name = "Password">
+      </div>
+    </div>
+  </div>
+  <button class="button is-warning is-dark">
+    Update User
+  </button>
+</form>
