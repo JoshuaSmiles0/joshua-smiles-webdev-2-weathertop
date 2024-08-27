@@ -42,6 +42,34 @@ export const stationStore = {
     return db.data.stations.filter((station) => station.userId === userid) 
   },
   
+    async updateStation(station, updatedStation) {
+  station.title = station.title,
+      station.lat = station.lat,
+      station.long=station.long,
+      station.userId=station.userId,
+      station._id = station._id,
+      station.weatherIcon = updatedStation.weatherIcon,
+      station.weather= updatedStation.weather,
+      station.currentTemp= updatedStation.currentTemp,
+      station.currentTempFarenheit= updatedStation.currentTempFarenheit,
+      station.maxTemp= updatedStation.maxTemp,
+      station.minTemp= updatedStation.minTemp,
+      station.tempIconPath= updatedStation.tempIconPath,
+      station.currentWind= updatedStation.currentWind,
+      station.currentWindMph= updatedStation.currentWindMph,
+      station.maxWind= updatedStation.maxWind,
+      station.minWind= updatedStation.minWind,
+      station.windDirectionCompass= updatedStation.windDirectionCompass,
+      station.windDirectionIcon= updatedStation.windDirectionIcon,
+      station.windType= updatedStation.windType,
+      station.currentPressure= updatedStation.currentPressure,
+      station.maxPressure= updatedStation.maxPressure,
+      station.minPressure= updatedStation.minPressure,
+      station.windChill= updatedStation.windChill,
+
+    await db.write();
+  },
+  
   
   //   async getStationByUserId(userid) {
   //   await db.read();

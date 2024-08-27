@@ -37,7 +37,7 @@ const viewData = {
     console.log(`updating report ${reportId} from station ${stationId}`)
     const report = await reportStore.getReportById(reportId);
     await reportStore.updateReport(report,updatedReport);
-    response.redirect("/station/" + stationId);
+    response.redirect(/station/ + stationId +"/updateReport/"+reportId);
   }
   
 }
