@@ -89,6 +89,13 @@
       "email": "gnomestalk@gmail.com",
       "password": "0000",
       "_id": "7cf9d294-299b-4c05-a289-5e975751e0f5"
+    },
+    {
+      "firstName": "bean",
+      "surname": "davies",
+      "email": "beandavies@gmail.com",
+      "password": "9999",
+      "_id": "899409de-8cf5-48a2-afd8-9710665a8bb2"
     }
   ]
 }

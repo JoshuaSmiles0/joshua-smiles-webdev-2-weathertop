@@ -23,11 +23,11 @@
     <p class = "card-header-title">
       Weather
       </p>
-<img src = "{{weatherIcon}}" width ="48" height ="48">
+<img src = "{{station.weatherIcon}}" width ="48" height ="48">
     </header>
     <div class = "card-content">
       <p>
-        {{weather}}
+        {{station.weather}}
       </p>
     </div>
   </div>
@@ -38,23 +38,23 @@
     <p class = "card-header-title">
       Temperature
       </p>
-<img src = "{{tempIconPath}}" width = "48" height = "48" alt = "temp">
+<img src = "{{station.tempIconPath}}" width = "48" height = "48" alt = "temp">
     </header>
     <div class = "card-content">
       <p>
-        Current: {{currentTemp}}°C
+        Current: {{station.currentTemp}}°C
       </p>
             <p>
-        Current: {{currentTempFarenheit}}°F
+        Current: {{station.currentTempFarenheit}}°F
       </p>
       <p>
-        Feels like: {{windChill}}°C
+        Feels like: {{station.windChill}}°C
       </p>
       <p>
-        Max: {{maxTemp}}°C
+        Max: {{station.maxTemp}}°C
       </p>
       <p>
-        Min: {{minTemp}}°C
+        Min: {{station.minTemp}}°C
       </p>
     </div>
   </div>
@@ -65,26 +65,26 @@
     <p class = "card-header-title">
       Wind
       </p>
-      <img src = "{{windDirectionIcon}}" width = "48" height = "48" alt = "direction">
+      <img src = "{{station.windDirectionIcon}}" width = "48" height = "48" alt = "direction">
     </header>
     <div class = "card-content">
       <p>
-      {{windType}}
+      {{station.windType}}
       </p>
       <p>
-        Direction: {{windDirectionCompass}}
+        Direction: {{station.windDirectionCompass}}
       </p>
       <p>
-        Current: {{currentWind}}Km/h
+        Current: {{station.currentWind}}Km/h
       </p>
       <p>
-        Current: {{currentWindMph}}Mph
+        Current: {{station.currentWindMph}}Mph
       </p>
       <p>
-        Max: {{maxWind}}Km/h
+        Max: {{station.maxWind}}Km/h
       </p>
       <p>
-        Min: {{minWind}}Km/h
+        Min: {{station.minWind}}Km/h
       </p>
     </div>
   </div>
@@ -99,13 +99,13 @@
     </header>
     <div class = "card-content">
       <p>
-        Current: {{currentPressure}}hPa
+        Current: {{station.currentPressure}}hPa
       </p>
       <p>
-        Max: {{maxPressure}}hPa
+        Max: {{station.maxPressure}}hPa
       </p>
         <p>
-        Min: {{minPressure}}hPa
+        Min: {{station.minPressure}}hPa
       </p>
     </div>
   </div>
