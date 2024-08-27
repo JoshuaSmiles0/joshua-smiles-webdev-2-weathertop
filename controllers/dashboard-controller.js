@@ -12,9 +12,6 @@ export const dashboardController = {
     const viewData = {
       title: "Station Dashboard",
       stations: stations,
-      
-      
-      
     };
     console.log("dashboard rendering");
     response.render("dashboard-view", viewData);
@@ -39,4 +36,7 @@ export const dashboardController = {
     await stationStore.deleteStationById(stationId);
     response.redirect("/dashboard");
   },
+  
+
+  
 };

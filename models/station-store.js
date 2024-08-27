@@ -42,11 +42,12 @@ export const stationStore = {
     return db.data.stations.filter((station) => station.userId === userid) 
   },
   
-  //   async getStationByUserIds(userid) {
+  
+  //   async getStationByUserId(userid) {
   //   await db.read();
-  //   const listr = db.data.stations.filter((station) => station.userId === userid) ;
-  //   listr.reports = await reportStore.getReportsByStationId(listr._id);
-  //   return listr;
+  //   const stations = db.data.stations.filter((station) => station.userId === userid);
+  //   stations.reports = await reportStore.getReportsByStationId(stations._id);
+  //   return stations;
   // },
   
 

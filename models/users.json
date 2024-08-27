@@ -8,10 +8,9 @@
       "_id": "d70333b2-e273-4bce-b0a5-530bbdf3bdea"
     },
     {
-      "firstName": "babayaga",
-      "surname": "davies",
+      "firstName": "gnome",
+      "surname": "chompsky",
       "email": "babayaga.davies@hotmail.com",
-      "password": "bbbbbbbbbbb",
       "_id": "722d3864-fa94-4da9-b9b4-96bf521ec3f6"
     },
     {
@@ -40,6 +39,56 @@
       "email": "polpot@gmail.com",
       "password": "vvvv",
       "_id": "2a09b1d1-9345-4e86-84d6-1c9e3192d298"
+    },
+    {
+      "firstName": "altus",
+      "surname": "chompsky",
+      "email": "babayaga.davies@hotmail.com",
+      "_id": "5ab0a64f-3741-431b-aec0-28e49ac6b2fa"
+    },
+    {
+      "firstName": "bean",
+      "surname": "stalk",
+      "email": "beanstalk@gmail.com",
+      "_id": "3380ccc3-bb9b-4295-92e3-f1df48c9f7d4"
+    },
+    {
+      "firstName": "bean",
+      "surname": "stalk",
+      "email": "beanstalk@gmail.com",
+      "password": "9999",
+      "_id": "c3731c05-945b-4038-bd35-43936b2a7040"
+    },
+    {
+      "firstName": "orange",
+      "surname": "juice",
+      "email": "orangejuice@gmail.com",
+      "_id": "90a6e70e-879b-46e9-9891-58f9669f1af3"
+    },
+    {
+      "firstName": "babayaga",
+      "surname": "juice",
+      "email": "babayaga.davies@hotmail.com",
+      "_id": "4706796f-9365-488a-a5d6-c268df531986"
+    },
+    {
+      "firstName": "peter",
+      "surname": "davies",
+      "email": "pdavies@gmail.com",
+      "_id": "0d94c0b3-7408-4435-8514-ca045c592472"
+    },
+    {
+      "firstName": "four",
+      "surname": "eight",
+      "email": "foureight@gmail.com",
+      "_id": "ce24c7fb-7ffa-4cf0-bde9-a9a7658598c2"
+    },
+    {
+      "firstName": "gnome",
+      "surname": "stalk",
+      "email": "gnomestalk@gmail.com",
+      "password": "0000",
+      "_id": "7cf9d294-299b-4c05-a289-5e975751e0f5"
     }
   ]
 }
