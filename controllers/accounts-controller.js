@@ -53,8 +53,9 @@ export const accountsController = {
       
     };
     
-    const userToUpdate = await userStore.getUserByEmail(request.body.currentEmail);
-    console.log(`Updating user ${userToUpdate.firstName}`)
+    const userToUpdate = await accountsController.getLoggedInUser(request);
+    console.log(`Updating user ${userToUpdate.email}`);
+    
     await userStore.updateUser(userToUpdate,updatedUser);
     response.redirect("/login");
   },

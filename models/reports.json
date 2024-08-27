@@ -83,6 +83,16 @@
       "pressure": 100,
       "_id": "ea22f49e-10da-405e-ac5a-eba73cec1641",
       "stationid": "6f297217-dd72-4f69-b78f-088886ae2071"
+    },
+    {
+      "date": "2024-08-27 17:22:07.520 ",
+      "code": "202",
+      "temp": 100,
+      "windSpeed": 15,
+      "windDirection": 315,
+      "pressure": 101,
+      "_id": "7d5733cd-04dd-4750-b774-fcc50c26c3b6",
+      "stationid": "388e7795-6e5b-403c-b40d-64c4410cfdb1"
     }
   ]
 }
