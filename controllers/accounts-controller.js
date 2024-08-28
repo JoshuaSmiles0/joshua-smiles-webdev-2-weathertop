@@ -34,9 +34,11 @@ export const accountsController = {
     response.render("signup-view",viewData);
   },
   
-  updateUser(request,response){
+  async updateUser(request,response){
+    const user = await accountsController.getLoggedInUser(request);
     const viewData = {
       title: "Update User Details",
+      user:user,
     };
     console.log("opening update user page");
     response.render("settings-view",viewData);

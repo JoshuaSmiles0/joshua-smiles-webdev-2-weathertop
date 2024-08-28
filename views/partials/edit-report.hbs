@@ -1,3 +1,47 @@
+<div class = "title">
+    {{station.title}} station report: {{report.date}}
+  </div>
+  
+  <div class= "box">
+    <h2 class = "subtitle is-underlined">
+      Current Details
+    </h2>
+    <table class = "table is-fullwidth">
+  <thead>
+    <trow>
+      <th>Date/Time</th>
+      <th>Weather Code</th>
+      <th>Temperature</th>
+      <th>Windspeed</th>
+      <th>Wind Direction</th>
+      <th>Pressure</th>
+    </trow>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        {{report.date}}
+      </td>
+      <td>
+        {{report.code}}
+      </td>
+      <td>
+        {{report.temp}}°C
+      </td>
+      <td>
+        {{report.windSpeed}}Km/h
+      </td>
+      <td>
+        {{report.windDirection}}°
+      </td>
+      <td>
+        {{report.pressure}}hPa
+      </td>
+    </tr>
+      </tbody>
+    </table>
+  </div>
+
 <form class = "box" action = "/station/{{station._id}}/updateReport/{{report._id}}" method = "POST">
   <label>Enter Updated Details</label>
   <div class = "field is-horizontal">
@@ -7,16 +51,16 @@
       </div>
       
             <div class = "field">
-        <input class = "input" type = "text" placeholder = "Enter Temperature" name = "temp">
+        <input class = "input" type = "text" placeholder = "Enter Temperature °C" name = "temp">
       </div>
             <div class = "field">
-        <input class = "input" type = "text" placeholder = "Enter Windspeed" name = "windSpeed">
+        <input class = "input" type = "text" placeholder = "Enter Windspeed Km/h" name = "windSpeed">
       </div>
       <div class = "select">
         {{>weatherTypes/wind-directions}}
       </div>
             <div class = "field">
-        <input class = "input" type = "text" placeholder = "Enter Pressure" name = "pressure">
+        <input class = "input" type = "text" placeholder = "Enter Pressure hPa" name = "pressure">
       </div>
     </div>
   </div>
