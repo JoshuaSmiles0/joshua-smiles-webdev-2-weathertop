@@ -75,7 +75,7 @@ async deleteReport (request,response){
   const reportId = (request.params.reportid);
   console.log(`deleting report ${reportId} from ${stationId}`);
   await reportStore.deleteReport(reportId);
-  response.redirect("/station/" + stationId);
+  response.redirect("/dashboard/updateStation/" + stationId);
 },
   
 };

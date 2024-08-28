@@ -9,11 +9,15 @@ export const dashboardController = {
     const loggedInUser = await accountsController.getLoggedInUser(request);
     const stations = await stationStore.getStationByUserId(loggedInUser._id);
     const stationsSorted = stations.sort((a,b)=> a.title.localeCompare(b.title));
+    const firstName = loggedInUser.firstName;
+    const surname = loggedInUser.surname;
     
 
     const viewData = {
       title: "Station Dashboard",
       stations: stationsSorted,
+      firstName: firstName,
+      surname:surname,
     };
     console.log("dashboard rendering");
     response.render("dashboard-view", viewData);
@@ -52,9 +56,15 @@ export const dashboardController = {
   
   async deleteStation(request,response){
     const stationId = request.params.id;
-    console.log(`deleting station ${stationId}`);
+    const reports = await reportStore.getReportsByStationId(stationId);
+    console.log(`deleting station ${stationId} and associated reports`);
+    for(let i = 0; i<reports.length;i++){
+    let reportId = reports[i]._id;
+    console.log(`report date ${reports[i].date}`)
+    console.log(`deleting report ${reportId}`);
+    await reportStore.deleteReport(reportId);
+    };
     await stationStore.deleteStationById(stationId);
-    // await reportStore.deleteReportsByStationId(stationId);
     response.redirect("/dashboard");
   },
   
@@ -102,7 +112,8 @@ async updateStation(request,response){
   }
   
   console.log(`updating station ${station.title}`);
-  await stationStore.updateStation(station,updatedStation);
+  const stationToUpdate = await stationStore.findStationById(stationId);
+  await stationStore.updateStation(stationToUpdate,updatedStation);
   response.redirect("/station/" + stationId);
   
   

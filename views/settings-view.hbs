@@ -1,12 +1,45 @@
 {{> menu active="settings"}}
 
+<h1 class ="title">
+  Update User Details
+</h1>
+
+  <div class= "box">
+    <h2 class = "subtitle is-underlined">
+      Current User Details
+    </h2>
+    <table class = "table is-fullwidth">
+  <thead>
+    <trow>
+      <th>First Name</th>
+      <th>Surname</th>
+      <th>Email</th>
+      <th>Password</th>
+    </trow>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        {{user.firstName}}
+      </td>
+      <td>
+        {{user.surname}}
+      </td>
+      <td>
+        {{user.email}}
+      </td>
+      <td id = "password" >
+        **********
+      </td>
+    </tr>
+      </tbody>
+    </table>
+  </div>
+
 <form class = "box" action = "/updateUser" method = "POST">
   <label>Enter Updated Details</label>
   <div class = "field is-horizontal">
     <div class = "field-body">
-<!--       <div class = "field">
-        <input class = "input" type = "text" placeholder = "Enter Current Email" name = "currentEmail">
-      </div> -->
             <div class = "field">
         <input class = "input" type = "text" placeholder = "Enter New First Name" name = "firstName">
       </div>
@@ -17,7 +50,7 @@
         <input class = "input" type = "text" placeholder = "Enter New Email" name = "email">
       </div>
       <div class = "field">
-        <input class = "input" type = "text" placeholder = "Enter New Password" name = "password">
+        <input class = "input" type = "password" placeholder = "Enter New Password" name = "password">
       </div>
     </div>
   </div>
