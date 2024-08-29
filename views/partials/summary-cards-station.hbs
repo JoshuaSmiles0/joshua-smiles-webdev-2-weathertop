@@ -23,7 +23,7 @@
     <p class = "card-header-title">
       Weather
       </p>
-<img src = "{{station.weatherIcon}}" width ="48" height ="48">
+<img src = "{{station.weatherIcon}}" width ="48" height ="48" onerror="this.src='https://cdn.glitch.global/d6973480-5b8e-463f-a315-d8ad6ba2634d/weatherMap.png?v=1724950952749'">
     </header>
     <div class = "card-content">
       <p>
@@ -38,7 +38,7 @@
     <p class = "card-header-title">
       Temperature
       </p>
-<img src = "{{station.tempIconPath}}" width = "48" height = "48" alt = "temp">
+<img src = "{{station.tempIconPath}}" width = "48" height = "48" alt = "" onerror="this.src='https://cdn.glitch.global/d6973480-5b8e-463f-a315-d8ad6ba2634d/celcius.png?v=1724950955411'">
     </header>
     <div class = "card-content">
       <p>
@@ -65,7 +65,7 @@
     <p class = "card-header-title">
       Wind
       </p>
-      <img src = "{{station.windDirectionIcon}}" width = "48" height = "48" alt = "direction">
+      <img class="image" src = "{{station.windDirectionIcon}}" width = "48" height = "48" alt = "" onerror="this.src='https://cdn.glitch.global/d6973480-5b8e-463f-a315-d8ad6ba2634d/wind.png?v=1724950949850'" >
     </header>
     <div class = "card-content">
       <p>
