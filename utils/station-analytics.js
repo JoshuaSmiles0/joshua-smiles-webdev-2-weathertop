@@ -40,9 +40,7 @@ export const stationAnalytics = {
     
   switch (weatherGroup){
       
-      default :
-      weatherIconAddress = "https://openweathermap.org/img/wn/10d@2x.png";
-      break;
+      
     case 2: weatherIconAddress = "https://openweathermap.org/img/wn/11d@2x.png";
       break;
       case 3: weatherIconAddress = "https://openweathermap.org/img/wn/09d@2x.png";
@@ -57,6 +55,7 @@ export const stationAnalytics = {
       break;
       case 80: weatherIconAddress = "https://openweathermap.org/img/wn/02d@2x.png";
       break;
+      default :weatherIconAddress = "https://cdn.glitch.global/d6973480-5b8e-463f-a315-d8ad6ba2634d/weatherMap.png?v=1724950952749";
       
       
   }
@@ -198,7 +197,7 @@ export const stationAnalytics = {
     let iconPath = null;
    
     switch(icon){
-      default: iconPath = "https://cdn.glitch.global/d6973480-5b8e-463f-a315-d8ad6ba2634d/Cold.png?v=1723154498650";
+      default: iconPath = "https://cdn.glitch.global/d6973480-5b8e-463f-a315-d8ad6ba2634d/celcius.png?v=1724950955411";
         break;
       case 1: iconPath = "https://cdn.glitch.global/d6973480-5b8e-463f-a315-d8ad6ba2634d/Cold.png?v=1723154498650";
         break;
@@ -267,7 +266,7 @@ export const stationAnalytics = {
     let windDirectionPath = null;
     
     switch (windDirection){
-        default : windDirectionPath = "https://cdn.glitch.global/d6973480-5b8e-463f-a315-d8ad6ba2634d/north.png?v=1723430007196"
+        default : windDirectionPath = "https://cdn.glitch.global/d6973480-5b8e-463f-a315-d8ad6ba2634d/wind.png?v=1724950949850"
         break;
       case "N": windDirectionPath = "https://cdn.glitch.global/d6973480-5b8e-463f-a315-d8ad6ba2634d/north.png?v=1723430007196"
         break;
