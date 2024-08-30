@@ -1,0 +1,29 @@
+<div class="ui segment" id="chart"></div>
+
+<script>
+  const data = {
+    labels: [
+      {{#each tempLabel}}
+        "{{this}}",
+      {{/each}}
+    ],
+    datasets: [
+      {
+        name: "Temp °C", type: "line",
+        values: [
+          {{#each tempTrend}}
+            {{this}},
+          {{/each}}
+        ]
+      }
+    ]
+  }
+
+  const chart = new frappe.Chart("#chart", {
+    title: "Entered Reports Temperature Trends",
+    data: data,
+    type: 'line',
+    height: 400,
+    colours:['Red'],
+  })
+</script>

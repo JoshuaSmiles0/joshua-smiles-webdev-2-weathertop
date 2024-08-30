@@ -1,6 +1,7 @@
 import {stationStore} from "../models/station-store.js"
 import {reportStore} from "../models/report-store.js"
 import {stationAnalytics} from "../utils/station-analytics.js"
+import axios from "axios"
 
 
 export const stationController = 
@@ -8,47 +9,22 @@ export const stationController =
   async index(request, response)
   {
     const station = await stationStore.getStationById(request.params.id);
-    // const weatherIcon = stationAnalytics.getWeatherIcon(station);
-    // const weather = stationAnalytics.getLatestWeather(station);
-    // const currentTemp = stationAnalytics.currentTemp(station);
-    // const currentTempFarenheit = stationAnalytics.currentTempFarenheit(station)
-    // const maxTemp = stationAnalytics.maxTemp(station);
-    // const minTemp = stationAnalytics.minTemp(station);
-    // const tempIconPath = stationAnalytics.tempIcon(station);
-    // const currentWind = stationAnalytics.currentWind(station);
-    // const currentWindMph = stationAnalytics.currentWindMph(station);
-    // const maxWind = stationAnalytics.maxWind(station);
-    // const minWind = stationAnalytics.minWind(station);
-    // const windDirectionCompass = stationAnalytics.windDirection(station);
-    // const windDirectionIcon = stationAnalytics.windDirectionIcon(station);
-    // const windType = stationAnalytics.windType(station);
-    // const currentPressure = stationAnalytics.currentPressure(station);
-    // const maxPressure = stationAnalytics.maxPressure(station);
-    // const minPressure = stationAnalytics.minPressure(station);
-    // const windChill = stationAnalytics.calculateWindChill(station);
+    let tempTrend = [];
+    let tempLabel = [];
+    const reports = station.reports;
+    for (let i = 0;i<station.reports.length;i++)
+      {
+        tempTrend.push(reports[i].temp);
+        tempLabel.push(reports[i].date);
+      }
     const viewData = {
       title:"station",
       station: station,
-      // weatherIcon:weatherIcon,
-      // weather:weather,
-      // currentTemp:currentTemp,
-      // currentTempFarenheit:currentTempFarenheit,
-      // maxTemp:maxTemp,
-      // minTemp:minTemp,
-      // tempIconPath:tempIconPath,
-      // currentWind:currentWind,
-      // currentWindMph:currentWindMph,
-      // maxWind:maxWind,
-      // minWind:minWind,
-      // windDirectionCompass:windDirectionCompass,
-      // windDirectionIcon:windDirectionIcon,
-      // windType:windType,
-      // currentPressure:currentPressure,
-      // maxPressure:maxPressure,
-      // minPressure:minPressure,
-      // windChill:windChill,
+      tempTrend:tempTrend,
+      tempLabel:tempLabel,
     };
-    
+    console.log(tempTrend)
+    console.log(tempLabel)
     response.render("station-view",viewData);
           
 },
@@ -68,6 +44,35 @@ async addReport(request, response) {
     await reportStore.addReport(station._id, newReport);
     response.redirect("/dashboard/updateStation/" + station._id);
   },
+  
+async autogenerateReport(request,response){
+  const station = await stationStore.findStationById(request.params.stationId);
+  const date = new Date;
+  const lat = station.lat;
+  const long = station.long;
+  const requestUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&units=metric&appid=281db238f821b178adf62c53beda8f6c`;
+  try {
+  const result = await axios.get(requestUrl);
+    const currentWeather = result.data;
+    const newReport = {
+      date: date.toISOString().replace('T',' ').replace('Z',' '),
+      code: currentWeather.weather[0].id,
+      temp: currentWeather.main.temp,
+      windSpeed:currentWeather.wind.speed,
+      windDirection:currentWeather.wind.deg,
+      pressure: currentWeather.main.pressure,
+    }
+      console.log(`adding report ${newReport.code}`);
+    await reportStore.addReport(station._id, newReport);
+    response.redirect("/dashboard/updateStation/" + station._id);
+  
+    }
+  
+  catch (error){console.log("autoreading unsuccessufl");
+    response.redirect("/station/" + station._id);}
+
+  
+},
 
 
 async deleteReport (request,response){

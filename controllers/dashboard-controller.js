@@ -2,6 +2,7 @@ import {stationStore} from "../models/station-store.js"
 import {accountsController} from "./accounts-controller.js"
 import {stationAnalytics} from "../utils/station-analytics.js"
 import {reportStore} from "../models/report-store.js"
+import axios from "axios"
 
 export const dashboardController = {
   async index(request, response) {
@@ -11,8 +12,6 @@ export const dashboardController = {
     const stationsSorted = stations.sort((a,b)=> a.title.localeCompare(b.title));
     const firstName = loggedInUser.firstName;
     const surname = loggedInUser.surname;
-    
-
     const viewData = {
       title: "Station Dashboard",
       stations: stationsSorted,
@@ -25,10 +24,15 @@ export const dashboardController = {
   
   async addStation(request,response){
     const loggedInUser = await accountsController.getLoggedInUser(request);
+    const city = request.body.title;
+    const requestUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=281db238f821b178adf62c53beda8f6c`;
+    try {
+  const result = await axios.get(requestUrl);
+    const cityData = result.data;
     const newStation = {
       title: request.body.title,
-      lat: request.body.lat,
-      long:request.body.long,
+      lat: cityData.coord.lat,
+      long:cityData.coord.lon,
       userId:loggedInUser._id,
       weatherIcon:null,
       weather:null,
@@ -52,6 +56,14 @@ export const dashboardController = {
     console.log(`adding station ${newStation.title}`);
     await stationStore.addStation(newStation);
     response.redirect("/dashboard")
+      }
+    
+        catch(error)
+      {
+        console.log("Location does not exist")
+        response.redirect("/dashboard")
+      }
+    
   },
   
   async deleteStation(request,response){

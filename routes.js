@@ -25,3 +25,4 @@ router.post("/register", accountsController.register);
 router.post("/authenticate", accountsController.authenticate);
 router.get("/settings",accountsController.updateUser);
 router.post("/updateUser",accountsController.registerUpdate);
+router.get("/station/:stationId/autogenerateReport",stationController.autogenerateReport);
