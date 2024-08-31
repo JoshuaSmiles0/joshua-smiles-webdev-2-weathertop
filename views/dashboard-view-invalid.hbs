@@ -2,22 +2,22 @@
 
 <div class = "columns is-centered">
   <div class = "column is-half ">
-<div class = "box has-text-centered">
-  <h1 class = "title is-3 is-underlined">
-    {{firstName}} {{surname}}'s Dashboard
-  </h1>
-</div>
+   <div class = "box has-text-centered">
+    <h1 class = "title is-3 is-underlined">
+     {{firstName}} {{surname}}'s Dashboard
+    </h1>
+   </div>
   </div>
-    </div>
+</div>
 
 <section class = "box">
-<p class = "has-text-danger">
+  <p class = "has-text-danger">
   City entered does not exist, please try again.
   </p>
 </section>
 
 <section class = "section">
-         {{> list-stations}}
-{{>map}}
-         {{> add-station}}
-         </section>
+  {{> list-stations}}
+  {{>map}}
+  {{> add-station}}
+</section>

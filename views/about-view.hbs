@@ -8,30 +8,38 @@
     Your Weather, Your Way
   </h4>
 </header>
-  <section class="box">
-    <p>
-      Weathertop is a student project for SETU Waterford HDip in computer science designed to simulate a weather monitoring app.
-      This App is not designed for commercial use.
-    </p>
+<div class="box">
+  <p>
+    Weathertop is a student project for SETU Waterford HDip in computer science designed to simulate a weather monitoring app.
+    This App is not designed for commercial use.
+  </p>
   <h4 class = "subtitle mb-1 mt-4">
     Using the App
-    </h4>
-    <p>
-      Weathertop allows users to create an account using a login and password. Upon registering and signing in, users are able to add weather stations
-      based on real locations. Within these stations, users can manually add time stamped weather readings to their station(s) or autogenerate a 
-      reading in realtime using the Openweather API. A summary panel can be found both within individual station pages or on the users dashboard. 
-      This provides a summary of all reports committed to the database, including current figures and maximum and minimum values. These are supported by
-      graphics to visualise these trends over time. Users have the ability to edit or delete reports as required. Users can also delete weather stations
-      from their dashboard, also deleting all reports associated with that station from the database. 
-    </p>
-    <h4 class = "subtitle mb-1 mt-4">
-    Upcoming features
-    </h4>
-    <p>
-      <ul>
-        <li>Map Markers for weather map</li>
+  </h4>
+  <p>
+    Weathertop allows users to create an account using a login and password. Upon registering and signing in, users are able to add weather stations
+    based on real locations. Within these stations, users can manually add time stamped weather readings to their station(s) or autogenerate a 
+    reading in realtime using the Openweather API. A summary panel can be found both within individual station pages or on the users dashboard. 
+    This provides a summary of all reports committed to the database, including current figures and maximum and minimum values. These are supported by
+    graphics to visualise these trends over time. Users have the ability to edit or delete reports as required. Users can also delete weather stations
+    from their dashboard, also deleting all reports associated with that station from the database. 
+  </p>
+  <h4 class ="subtitle mb-1 mt-4">
+    Notes on metrics
+  </h4>
+  <p>
+  Wind description seen on summary panels is defined from wind speed in knots using the <a href ="https://www.weather.gov/mfl/beaufort">Beufort Wind Scale</a>
+  . Feels like temperature within these panels represents the <a href = "https://www.omnicalculator.com/other/wind-chill">wind chill temperature</a> using the 
+  formula T_wc = 13.12 + 0.6215 * temperature * (0.3965 * temperature - 11.37) * wind speed^0.16.
+  </p>
+  <h4 class = "subtitle mb-1 mt-4">
+  Upcoming features
+  </h4>
+  <p>
+    <ul>
+      <li>Map Markers for weather map</li>
     </ul>
-    </p>
+  </p>
   <h4 class = "subtitle mb-1 mt-4">
     Acknowledgements
   </h4>
@@ -42,6 +50,6 @@
       <li>Dashboard map provided by <a href = "https://www.openstreetmap.org/#map=7/53.465/-8.240">Open Street Map under the open database license</a></li>
       <li>Website was styled using <a href="https://bulma.io/">Bulma CSS Framework</a></li>
       <li>NodeJs Web development template for website provided by <a href = "https://www.setu.ie/" >SETU Waterford</a> </li>
-  </ul>
+    </ul>
   </p>
-</section>
+</div>

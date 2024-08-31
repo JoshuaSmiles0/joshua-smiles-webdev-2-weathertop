@@ -103,6 +103,34 @@
       "email": "bigmac@gmail.com",
       "password": "4753",
       "_id": "db942871-7664-4369-8ad8-de24101d25af"
+    },
+    {
+      "firstName": "topher",
+      "surname": "james",
+      "email": "topherjames@gmail.com",
+      "password": "0000",
+      "_id": "e9b5d528-fd7a-4a21-a54d-fd9265475f46"
+    },
+    {
+      "firstName": "gnome",
+      "surname": "juice",
+      "email": "gnomejuice@gmail.com",
+      "password": "0000",
+      "_id": "bcc59164-df10-4306-8a25-ccdf65df618d"
+    },
+    {
+      "firstName": "hulk",
+      "surname": "hogan",
+      "email": "hulkhogan@gmail.com",
+      "password": "9999",
+      "_id": "c89229ad-a62b-4b30-b2d3-4ee20782a3d2"
+    },
+    {
+      "firstName": "jop",
+      "surname": "lin",
+      "email": "joplin@gmail.com",
+      "password": "1234",
+      "_id": "fb4ab696-934f-425b-afe5-1aa48cce2447"
     }
   ]
 }
