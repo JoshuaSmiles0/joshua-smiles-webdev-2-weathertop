@@ -49,6 +49,7 @@ export const stationStore = {
   
     async updateStation(station, updatedStation) {
   station.title = station.title,
+    station.country = station.country,
       station.lat = station.lat,
       station.long=station.long,
       station.userId=station.userId,

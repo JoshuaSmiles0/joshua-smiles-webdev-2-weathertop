@@ -31,6 +31,7 @@ export const dashboardController = {
     const cityData = result.data;
     const newStation = {
       title: request.body.title,
+      country:cityData.sys.country,
       lat: cityData.coord.lat,
       long:cityData.coord.lon,
       userId:loggedInUser._id,
