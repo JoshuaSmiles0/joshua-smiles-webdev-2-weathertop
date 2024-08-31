@@ -3,25 +3,17 @@
 
 <div class = "columns is-centered">
   <div class = "column is-half">
-<div class = "box has-text-centered">
-  <h1 class = "title is-underlined">
-    {{station.title}} Weather Station
-  </h1>
-</div>
+   <div class = "box has-text-centered">
+    <h1 class = "title is-underlined">
+     {{station.title}} Weather Station
+    </h1>
+   </div>
   </div>
-    </div>
-
-
-
+</div>
 <div class= "box">
   {{>summary-cards-station}} 
 </div>
-
-  {{>tempGraph}}
-
-
-
-
+{{>tempGraph}}
 <section class = "section">
   {{>list-reports}}
   {{>add-report}}

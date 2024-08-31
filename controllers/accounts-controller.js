@@ -69,13 +69,13 @@ export const accountsController = {
     response.redirect("/login");
   },
   /* Retrieves user user from signup view request via route. Attempts to add new user to
-  user store. Redirects user to landing page
+  user store. Redirects user to login page
   */
   async register(request, response) {
     const user = request.body;
     await userStore.addUser(user);
     console.log(`adding user ${user.email}`);
-    response.redirect("/");
+    response.redirect("/login");
   },
 
   /*retrieves exisitng user from user store using email input in login view form. If user exists

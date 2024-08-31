@@ -3,21 +3,20 @@
 <h1 class ="title">
   Update User Details
 </h1>
-
-  <div class= "box">
-    <h2 class = "subtitle is-underlined">
-      Current User Details
-    </h2>
-    <table class = "table is-fullwidth">
-  <thead>
+<div class= "box">
+  <h2 class = "subtitle is-underlined">
+    Current User Details
+  </h2>
+  <table class = "table is-fullwidth">
+   <thead>
     <trow>
       <th>First Name</th>
       <th>Surname</th>
       <th>Email</th>
       <th>Password</th>
     </trow>
-  </thead>
-  <tbody>
+   </thead>
+   <tbody>
     <tr>
       <td>
         {{user.firstName}}
@@ -31,22 +30,21 @@
       <td id = "password" >
         **********
       </td>
-    </tr>
-      </tbody>
-    </table>
-  </div>
-
+     </tr>
+    </tbody>
+  </table>
+</div>
 <form class = "box" action = "/updateUser" method = "POST">
   <label>Enter Updated Details</label>
-  <div class = "field is-horizontal">
+   <div class = "field is-horizontal">
     <div class = "field-body">
-            <div class = "field">
+      <div class = "field">
         <input class = "input" type = "text" placeholder = "Enter New First Name" name = "firstName">
       </div>
-            <div class = "field">
+      <div class = "field">
         <input class = "input" type = "text" placeholder = "Enter New Surname" name = "surname">
       </div>
-            <div class = "field">
+      <div class = "field">
         <input class = "input" type = "text" placeholder = "Enter New Email" name = "email">
       </div>
       <div class = "field">
