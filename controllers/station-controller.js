@@ -16,12 +16,14 @@ export const stationController =
       {
         tempTrend.push(reports[i].temp);
         tempLabel.push(reports[i].date);
-      }
+      };
+  
     const viewData = {
       title:"station",
       station: station,
       tempTrend:tempTrend,
       tempLabel:tempLabel,
+
     };
     console.log(tempTrend)
     console.log(tempLabel)

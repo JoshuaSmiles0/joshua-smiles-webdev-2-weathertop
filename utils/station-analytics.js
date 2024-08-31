@@ -215,42 +215,98 @@ export const stationAnalytics = {
     if(station.reports.length > 0){
       let latestPosition = (station.reports.length) -1 ;
       let windDirection = station.reports[latestPosition].windDirection;
+      let windGroup = null
+      
+      if((windDirection == 360)||(windDirection ==0)) {
+        windGroup = 1
+      }
+      
+      else if((windDirection > 0)&& (windDirection <=22.5)){
+        windGroup = 2
+      }
+      else if((windDirection > 22.5)&& (windDirection <=45.0)){
+        windGroup = 3
+      }
+      else if((windDirection > 45.0)&& (windDirection <=67.5)){
+        windGroup = 4
+      }
+      else if((windDirection > 67.5)&& (windDirection <=90.0)){
+        windGroup = 5
+      }
+      else if((windDirection > 90.0)&& (windDirection <=112.5)){
+        windGroup = 6
+      }
+      else if((windDirection > 112.5)&& (windDirection <=135.0)){
+        windGroup = 7
+      }
+      else if((windDirection > 135.0)&& (windDirection <=157.5)){
+        windGroup = 8
+      }
+      else if((windDirection > 157.5)&& (windDirection <=180.0)){
+        windGroup = 9
+      }
+      else if((windDirection > 180.0)&& (windDirection <=202.5)){
+        windGroup = 10
+      }
+      else if((windDirection > 202.5)&& (windDirection <=225.0)){
+        windGroup = 11
+      }
+      else if((windDirection > 225.0)&& (windDirection <=247.5)){
+        windGroup = 12
+      }
+      else if((windDirection > 247.5)&& (windDirection <=270.0)){
+        windGroup = 13
+      }
+      else if((windDirection > 270.0)&& (windDirection <=292.5)){
+        windGroup = 14
+      }
+      else if((windDirection > 292.5)&& (windDirection <=315.0)){
+        windGroup = 15
+      }
+      else if((windDirection > 315.0)&& (windDirection <=337.5)){
+        windGroup = 16
+      }
+      else if((windDirection > 337.5)&& (windDirection <360.0)){
+        windGroup = 17
+      }
+     
+      
       let windDirectionCompass = null;
       
-      switch(windDirection){
+      switch(windGroup){
         default:windDirectionCompass = "N";
           break;
-        case 0.0:windDirectionCompass ="N";
+        case 1:windDirectionCompass ="N";
           break;
-                  case 22.5:windDirectionCompass ="NNE";
+                  case 2:windDirectionCompass ="NNE";
           break;
-                  case 45.0 :windDirectionCompass ="NE";
+                  case 3 :windDirectionCompass ="NE";
           break;
-                  case 67.5:windDirectionCompass ="ENE";
+                  case 4:windDirectionCompass ="ENE";
           break;
-                  case 90.0:windDirectionCompass ="E";
+                  case 5:windDirectionCompass ="E";
           break;
-                  case 112.5:windDirectionCompass ="ESE";
+                  case 6:windDirectionCompass ="ESE";
           break;
-                  case 135.0:windDirectionCompass ="SE";
+                  case 7:windDirectionCompass ="SE";
           break;
-                  case 157.5:windDirectionCompass ="SSE";
+                  case 8:windDirectionCompass ="SSE";
           break;
-                  case 180.0:windDirectionCompass ="S";
+                  case 9:windDirectionCompass ="S";
           break;
-                  case 202.5:windDirectionCompass ="SSW";
+                  case 10:windDirectionCompass ="SSW";
           break;
-                  case 225.0:windDirectionCompass ="SW";
+                  case 11:windDirectionCompass ="SW";
           break;
-                  case 247.5:windDirectionCompass ="WSW";
+                  case 12:windDirectionCompass ="WSW";
           break;
-                  case 270.0:windDirectionCompass ="W";
+                  case 13:windDirectionCompass ="W";
           break;
-                  case 292.5:windDirectionCompass ="WNW";
+                  case 14:windDirectionCompass ="WNW";
           break;
-                  case 315.0:windDirectionCompass ="NW";
+                  case 15:windDirectionCompass ="NW";
           break;
-                  case 337.5:windDirectionCompass ="NNW";
+                  case 16:windDirectionCompass ="NNW";
           break;
         
       }
