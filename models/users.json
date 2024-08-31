@@ -96,6 +96,13 @@
       "email": "beandavies@gmail.com",
       "password": "9999",
       "_id": "899409de-8cf5-48a2-afd8-9710665a8bb2"
+    },
+    {
+      "firstName": "Mikhail",
+      "surname": "Gorbachov",
+      "email": "bigmac@gmail.com",
+      "password": "4753",
+      "_id": "db942871-7664-4369-8ad8-de24101d25af"
     }
   ]
 }
