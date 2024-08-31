@@ -8,6 +8,7 @@ import {accountsController} from "./controllers/accounts-controller.js";
 export const router = express.Router();
 
 router.get("/dashboard", dashboardController.index);
+router.get("/dashboardInvalid", dashboardController.invalidLocation);
 router.get("/about", aboutController.index);
 router.post("/dashboard/addstation",dashboardController.addStation);
 router.get("/station/:id", stationController.index);
@@ -19,6 +20,7 @@ router.post("/station/:stationid/updateReport/:reportid",reportController.update
 router.get("/dashboard/updateStation/:stationId",dashboardController.updateStation);
 router.get("/",accountsController.index);
 router.get("/login", accountsController.login);
+router.get("/loginInvalid", accountsController.loginInvalid);
 router.get("/signup", accountsController.signup);
 router.get("/logout", accountsController.logout);
 router.post("/register", accountsController.register);
